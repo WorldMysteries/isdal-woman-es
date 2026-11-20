@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La mujer de Isdalen — el caso frío más misterioso de Noruega</title>
+<meta name="description" content="El 29 de noviembre de 1970, en el valle de Isdalen cerca de Bergen, se encontró el cuerpo calcinado de una mujer sin nombre. Ocho seudónimos, un cuaderno cifrado, gasolina sin recipiente — y ni una sola respuesta hasta hoy. Un expediente interactivo.">
+<meta property="og:title" content="La mujer de Isdalen — caso n.º 134/70">
+<meta property="og:description" content="Calcinda en el valle al que llamaban el Valle de la Muerte. Ocho nombres, ni un solo documento. Una investigación interactiva del caso frío más misterioso de Noruega.">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%23d6543c%22/><text x=%2250%22 y=%2270%22 font-size=%2256%22 text-anchor=%22middle%22 fill=%22%23e9e4d6%22 font-family=%22Georgia%22 font-weight=%22bold%22>?</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ SISTEMA DE DISEÑO «EXPEDIENTE DE ARCHIVO» ============ */
+:root{
+  --bg:#0d1015;
+  --bg-2:#11151d;
+  --panel:#151b25;
+  --panel-2:#1a212d;
+  --line:rgba(233,228,214,.12);
+  --line-strong:rgba(233,228,214,.22);
+  --paper:#e9e4d6;
+  --paper-dim:#cfc9ba;
+  --paper-dark:#2b251c;
+  --fog:#96a3b1;
+  --fog-dim:#6b7684;
+  --red:#d6543c;
+  --red-deep:#a83a28;
+  --red-soft:rgba(214,84,60,.16);
+  --gold:#c9a35c;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'PT Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --hand:'Caveat',cursive;
+  --nav-h:66px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--paper);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+
+/* grano de película sobre todo */
+.grain{
+  position:fixed;inset:-50%;z-index:2000;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");
+  animation:grainShift 7s steps(6) infinite;
+}
+@keyframes grainShift{
+  0%,100%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}
+  60%{transform:translate(-5%,-2%)}80%{transform:translate(4%,4%)}
+}
+
+/* progreso de lectura */
+#progressBar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--red-deep),var(--red));z-index:1500;transition:width .12s linear}
+
+/* ============ NAVEGACIÓN ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1400;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(18px,4vw,44px);
+  background:rgba(13,16,21,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--paper)}
+.brand-dot{width:11px;height:11px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(214,84,60,.6);animation:pulseDot 2.4s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(214,84,60,.55)}70%{box-shadow:0 0 0 11px rgba(214,84,60,0)}100%{box-shadow:0 0 0 0 rgba(214,84,60,0)}}
+.brand-text{font-family:var(--mono);font-size:.82rem;letter-spacing:.22em;font-weight:700}
+.brand-text em{font-style:normal;color:var(--fog);font-weight:400}
+.nav-links{display:flex;gap:clamp(10px,2vw,26px);list-style:none;align-items:center}
+.nav-links a{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fog);text-decoration:none;padding:8px 4px;position:relative;transition:color .25s;
+}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:2px;height:2px;width:0;background:var(--red);transition:width .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--paper)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.burger{display:none;background:none;border:1px solid var(--line-strong);border-radius:6px;width:44px;height:44px;color:var(--paper);align-items:center;justify-content:center}
+.burger svg{width:20px;height:20px}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;z-index:1390;background:rgba(13,16,21,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:18px 22px 26px}
+.mobile-menu a{display:block;font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--fog);text-decoration:none;padding:14px 6px;border-bottom:1px solid var(--line)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--paper)}
+.mobile-menu.open{display:block;animation:menuIn .3s var(--ease)}
+@keyframes menuIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+
+/* ============ BLOQUES COMUNES ============ */
+section{scroll-margin-top:calc(var(--nav-h) + 10px)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(18px,4.5vw,48px)}
+.section-pad{padding:clamp(70px,9vw,130px) 0}
+.kicker{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--red);display:flex;align-items:center;gap:14px;margin-bottom:22px;
+}
+.kicker::after{content:"";flex:0 0 72px;height:1px;background:var(--red-deep);opacity:.7}
+.h-display{font-family:var(--serif);font-weight:900;line-height:1.02;letter-spacing:-.01em}
+h2.h-display{font-size:clamp(2rem,5.2vw,3.6rem);margin-bottom:26px}
+h2.h-display .thin{font-weight:500;font-style:italic;color:var(--fog)}
+.lede{font-size:clamp(1.05rem,1.5vw,1.22rem);color:var(--paper-dim);max-width:62ch}
+.red{color:var(--red)}
+.gold{color:var(--gold)}
+
+/* aparición al hacer scroll */
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;isolation:isolate;
+}
+.hero-bg{
+  position:absolute;inset:-6%;z-index:-1;
+  background:url('https://images.pexels.com/photos/39081907/pexels-photo-39081907.png?auto=compress&cs=tinysrgb&fit=crop&h=1300&w=2200') center 35%/cover no-repeat;
+  animation:kenburns 22s ease-in-out infinite alternate;
+}
+@keyframes kenburns{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.12) translate(-1.5%,-2.5%)}}
+.hero-shade{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(13,16,21,.82) 0%, rgba(13,16,21,.18) 30%, rgba(13,16,21,.08) 46%, rgba(13,16,21,.78) 78%, var(--bg) 100%),
+    linear-gradient(100deg, rgba(13,16,21,.88) 0%, rgba(13,16,21,.35) 45%, rgba(13,16,21,.05) 75%);
+}
+.hero-inner{max-width:1200px;width:100%;margin:0 auto;padding:calc(var(--nav-h) + 40px) clamp(18px,4.5vw,48px) 0;position:relative}
+.hero-kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:clamp(14px,2.4vh,28px)}
+.hero-kicker .blink{width:9px;height:9px;background:var(--red);border-radius:50%;animation:blink 1.15s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+.hero h1{
+  font-family:var(--serif);font-weight:900;letter-spacing:-.02em;
+  font-size:clamp(3.1rem,11.5vw,8.6rem);line-height:.94;text-transform:uppercase;
+}
+.hero h1 .line-2{
+  display:block;color:transparent;-webkit-text-stroke:1.6px var(--paper);
+  opacity:.96;
+}
+.hero-sub{
+  margin-top:clamp(18px,3vh,32px);max-width:58ch;font-size:clamp(1rem,1.6vw,1.22rem);color:var(--paper-dim);
+  border-left:2px solid var(--red);padding-left:18px;
+}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(22px,3.4vh,40px)}
+.btn{
+  display:inline-flex;align-items:center;gap:12px;text-decoration:none;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  padding:16px 26px;border:1px solid transparent;border-radius:2px;transition:all .28s var(--ease);
+}
+.btn-red{background:var(--red);color:#160b08;border-color:var(--red)}
+.btn-red:hover{background:#e2694f;border-color:#e2694f;transform:translateY(-2px);box-shadow:0 14px 34px rgba(214,84,60,.35)}
+.btn-ghost{background:rgba(13,16,21,.35);color:var(--paper);border-color:var(--line-strong)}
+.btn-ghost:hover{border-color:var(--paper);transform:translateY(-2px)}
+.btn svg{width:16px;height:16px}
+
+/* sello «SIN RESOLVER» */
+.stamp{
+  position:absolute;top:clamp(90px,14vh,150px);right:clamp(14px,5vw,70px);
+  border:4px double var(--red);color:var(--red);border-radius:6px;
+  font-family:var(--mono);font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  font-size:clamp(.78rem,1.6vw,1.15rem);padding:14px 22px;transform:rotate(-9deg);
+  text-align:center;line-height:1.5;opacity:0;
+  box-shadow:inset 0 0 24px rgba(214,84,60,.15);
+  animation:stampIn .7s var(--ease) 1.15s forwards;
+  mix-blend-mode:screen;user-select:none;
+}
+.stamp small{display:block;font-size:.55em;letter-spacing:.34em;color:var(--red);opacity:.85}
+@keyframes stampIn{0%{opacity:0;transform:rotate(-9deg) scale(2.4)}60%{opacity:1;transform:rotate(-9deg) scale(.92)}100%{opacity:.92;transform:rotate(-9deg) scale(1)}}
+
+/* cinta de ciudades */
+.hero-strip{
+  margin-top:clamp(30px,5vh,64px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:rgba(13,16,21,.62);backdrop-filter:blur(6px);overflow:hidden;white-space:nowrap;
+}
+.marquee{display:inline-flex;gap:0;animation:marquee 36s linear infinite;padding:12px 0}
+.marquee span{font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;color:var(--fog);padding:0 26px;text-transform:uppercase}
+.marquee b{color:var(--red);font-weight:700}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* indicación de scroll */
+.scroll-hint{position:absolute;bottom:calc(66px + clamp(30px,5vh,64px) + 26px);right:clamp(18px,4.5vw,48px);display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--fog)}
+.scroll-hint .track{width:1px;height:74px;background:var(--line-strong);position:relative;overflow:hidden}
+.scroll-hint .track::after{content:"";position:absolute;left:-2px;top:-16px;width:5px;height:16px;border-radius:3px;background:var(--red);animation:drop 1.9s var(--ease) infinite}
+@keyframes drop{0%{top:-18px}70%,100%{top:110%}}
+.scroll-hint span{font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;writing-mode:vertical-rl}
+
+/* ============ ESTADÍSTICAS ============ */
+.stats{border-bottom:1px solid var(--line);background:var(--bg-2)}
+.stats .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
+.stat{padding:34px 18px;text-align:center;border-left:1px solid var(--line)}
+.stat:first-child{border-left:none}
+.stat-num{font-family:var(--mono);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.6rem);color:var(--paper);letter-spacing:-.02em}
+.stat-num i{font-style:normal;color:var(--red)}
+.stat-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fog);margin-top:8px;line-height:1.7}
+
+/* ============ SECCIÓN 01 — LUGAR / CASO ============ */
+.case-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,4vw,60px);align-items:start}
+.case-facts{display:flex;flex-direction:column;gap:0;margin-top:30px;border-top:1px solid var(--line)}
+.fact-row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:14px 4px;border-bottom:1px solid var(--line);font-size:.95rem}
+.fact-row dt{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--fog);padding-top:3px}
+.fact-row dd{color:var(--paper-dim)}
+.fact-row dd b{color:var(--paper);font-weight:700}
+
+/* mapa-dossier SVG */
+.map-panel{
+  background:var(--panel);border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.45);
+}
+.map-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--panel-2)}
+.map-head span{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fog)}
+.map-head .defcon{color:var(--red);border:1px solid var(--red-deep);border-radius:3px;padding:3px 8px;font-size:.58rem}
+.map-body{padding:10px 8px 4px}
+.map-body svg{width:100%;height:auto;display:block}
+.map-node{cursor:pointer}
+.map-node circle.core{fill:var(--paper);transition:fill .25s}
+.map-node:hover circle.core,.map-node:focus-visible circle.core{fill:var(--gold)}
+.map-node text{fill:var(--fog);font-family:var(--mono);font-size:12px;letter-spacing:.08em;transition:fill .25s}
+.map-node:hover text{fill:var(--paper)}
+.map-info{
+  border-top:1px solid var(--line);padding:16px 18px;min-height:96px;
+  background:linear-gradient(180deg,rgba(214,84,60,.05),transparent);
+}
+.map-info h3{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.map-info p{font-size:.92rem;color:var(--paper-dim)}
+.map-coords{padding:10px 18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;color:var(--fog-dim);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+.photo-pair{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:clamp(40px,5vw,70px)}
+.figure{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 24px 50px rgba(0,0,0,.5)}
+.figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.figure:hover img{transform:scale(1.05)}
+.figure figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;
+  background:linear-gradient(180deg,transparent,rgba(8,10,14,.88));
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim);
+}
+.figure-1{height:380px}.figure-2{height:380px}
+
+/* ============ SECCIÓN 02 — EVIDENCIAS / TABLERO ============ */
+.evidence-section{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.corkboard{
+  margin-top:44px;border-radius:14px;border:1px solid #3a2d20;
+  background:
+    radial-gradient(rgba(0,0,0,.4) 1.3px, transparent 1.4px) 0 0/24px 24px,
+    radial-gradient(rgba(255,255,255,.045) 1px, transparent 1.1px) 12px 12px/24px 24px,
+    linear-gradient(155deg,#2a2016 0%,#211812 55%,#1a130d 100%);
+  padding:clamp(20px,3vw,40px);
+  box-shadow:inset 0 0 80px rgba(0,0,0,.55), 0 30px 60px rgba(0,0,0,.4);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,26px);
+}
+.evidence-card{
+  position:relative;text-align:left;border:none;border-radius:3px;
+  background:linear-gradient(172deg,#efe9da 0%,#e3ddcd 60%,#d5cfbe 100%);
+  color:var(--paper-dark);padding:30px 16px 16px;min-height:172px;
+  box-shadow:0 12px 26px rgba(0,0,0,.5), inset 0 0 30px rgba(120,100,60,.08);
+  transform:rotate(var(--r,-1.2deg));transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+  display:flex;flex-direction:column;gap:8px;
+}
+.evidence-card::before{ /* chincheta */
+  content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);
+  width:14px;height:14px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#ff8d6e,var(--red-deep) 70%);
+  box-shadow:0 3px 5px rgba(0,0,0,.45);
+}
+.evidence-card:hover,.evidence-card:focus-visible{transform:rotate(0) translateY(-7px) scale(1.02);box-shadow:0 26px 48px rgba(0,0,0,.6);z-index:5}
+.ev-tag{font-family:var(--mono);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red-deep);border-bottom:1px solid rgba(43,37,28,.25);padding-bottom:6px}
+.ev-title{font-family:var(--serif);font-weight:700;font-size:1.02rem;line-height:1.25;color:#241f16}
+.ev-more{margin-top:auto;font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:#7a6a4e;display:flex;align-items:center;gap:6px}
+.ev-more svg{width:11px;height:11px}
+.cork-note{
+  margin-top:26px;text-align:center;font-family:var(--hand);font-size:1.5rem;color:#cbbf9f;transform:rotate(-1deg);opacity:.9;
+}
+
+/* modal de evidencia */
+.modal-backdrop{
+  position:fixed;inset:0;z-index:1600;display:flex;align-items:center;justify-content:center;
+  background:rgba(6,8,12,.82);backdrop-filter:blur(6px);padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.modal-backdrop.open{opacity:1;pointer-events:auto}
+.modal{
+  background:linear-gradient(170deg,#f2ecdd,#e0dac9);color:var(--paper-dark);
+  max-width:560px;width:100%;max-height:88vh;overflow:auto;border-radius:6px;
+  padding:28px 28px 24px;position:relative;
+  box-shadow:0 40px 90px rgba(0,0,0,.65);
+  transform:translateY(26px) scale(.96);transition:transform .35s var(--ease);
+}
+.modal-backdrop.open .modal{transform:none}
+.modal-tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--red-deep);margin-bottom:10px}
+.modal h3{font-family:var(--serif);font-size:1.55rem;line-height:1.2;margin-bottom:14px;color:#221d14}
+.modal p{font-size:.97rem;color:#3a342a;margin-bottom:12px}
+.modal .why{border-left:3px solid var(--red-deep);padding:10px 14px;background:rgba(168,58,40,.07);font-size:.92rem}
+.modal .why b{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red-deep);display:block;margin-bottom:4px}
+.modal-close{
+  position:absolute;top:12px;right:12px;width:38px;height:38px;border:none;border-radius:50%;
+  background:rgba(43,37,28,.09);color:#3a342a;display:flex;align-items:center;justify-content:center;transition:background .2s;
+}
+.modal-close:hover{background:rgba(43,37,28,.2)}
+.modal-close svg{width:17px;height:17px}
+.modal-stamp{position:absolute;bottom:14px;right:16px;font-family:var(--mono);font-size:.52rem;letter-spacing:.22em;color:rgba(43,37,28,.4);text-transform:uppercase;transform:rotate(-4deg)}
+
+/* ============ SECCIÓN 03 — CRONOLOGÍA ============ */
+.timeline{position:relative;margin-top:56px;padding-left:0}
+.tl-rail{position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--red) 0%,var(--red-deep) 60%,transparent 100%);transform:translateX(-50%)}
+.tl-item{
+  display:grid;grid-template-columns:1fr 84px 1fr;align-items:center;gap:0;
+  margin-bottom:clamp(18px,2.6vw,32px);position:relative;
+}
+.tl-dot{
+  grid-column:2;justify-self:center;width:16px;height:16px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--red);z-index:2;box-shadow:0 0 0 5px var(--bg);
+}
+.tl-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 20px;
+  transition:border-color .3s,transform .3s;
+}
+.tl-card:hover{border-color:var(--red-deep);transform:translateY(-3px)}
+.tl-item:nth-child(odd) .tl-card{grid-column:1;grid-row:1;text-align:right}
+.tl-item:nth-child(even) .tl-card{grid-column:3;grid-row:1}
+.tl-date{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:6px}
+.tl-card h3{font-family:var(--serif);font-size:1.14rem;font-weight:700;margin-bottom:6px;line-height:1.3}
+.tl-card p{font-size:.88rem;color:var(--fog);line-height:1.6}
+.tl-item.key .tl-dot{background:var(--red);border-color:#ff9c84;box-shadow:0 0 0 5px var(--bg),0 0 22px rgba(214,84,60,.6)}
+.tl-item.key .tl-card{border-color:var(--red-deep);background:linear-gradient(160deg,#1d1611,var(--panel) 55%)}
+
+/* datos científicos */
+.science{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:clamp(46px,6vw,80px)}
+.sci-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px 20px}
+.sci-card .sci-kicker{font-family:var(--mono);font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sci-card h4{font-family:var(--serif);font-size:1.02rem;margin-bottom:8px}
+.sci-card p{font-size:.82rem;color:var(--fog);line-height:1.6}
+
+/* ============ SECCIÓN 04 — SEUDÓNIMOS ============ */
+.aliases-section{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.alias-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px;perspective:1400px}
+.alias-card{
+  border:none;background:transparent;height:290px;position:relative;transform-style:preserve-3d;
+  transition:transform .65s var(--ease);text-align:left;
+}
+.alias-card.flipped{transform:rotateY(180deg)}
+.alias-face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border-radius:10px;padding:18px;display:flex;flex-direction:column;
+}
+.alias-front{
+  background:linear-gradient(160deg,#20262f 0%,#171c24 70%);
+  border:1px solid var(--line-strong);overflow:hidden;
+}
+.alias-front::after{ /* banda holográfica */
+  content:"";position:absolute;top:0;bottom:0;left:-80%;width:60%;
+  background:linear-gradient(100deg,transparent,rgba(233,228,214,.09),transparent);
+  animation:holo 4.5s ease-in-out infinite;
+}
+@keyframes holo{0%,60%{left:-80%}100%{left:130%}}
+.alias-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;color:var(--fog-dim)}
+.alias-nation{margin-top:auto;font-family:var(--mono);font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.alias-name{font-family:var(--serif);font-weight:900;font-size:clamp(1.35rem,2vw,1.7rem);line-height:1.1;margin:8px 0 4px;color:var(--paper)}
+.alias-hint{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;color:var(--fog);text-transform:uppercase;display:flex;align-items:center;gap:7px}
+.alias-hint svg{width:12px;height:12px}
+.alias-back{
+  background:linear-gradient(165deg,#efe9da,#ddd6c4);color:var(--paper-dark);
+  transform:rotateY(180deg);border:1px solid #b9b09a;justify-content:flex-start;gap:10px;
+}
+.alias-back .bk-label{font-family:var(--mono);font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red-deep);border-bottom:1.5px solid rgba(43,37,28,.3);padding-bottom:8px}
+.alias-back p{font-size:.83rem;line-height:1.55;color:#332d23}
+.alias-back p b{color:#211d14}
+.alias-back .bk-foot{margin-top:auto;font-family:var(--mono);font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:#83765a}
+
+/* ============ SECCIÓN 05 — TEORÍAS ============ */
+.tabs-bar{display:flex;gap:10px;flex-wrap:wrap;margin:42px 0 0}
+.tab-btn{
+  background:transparent;border:1px solid var(--line-strong);color:var(--fog);border-radius:999px;
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:12px 20px;transition:all .25s;
+}
+.tab-btn:hover{border-color:var(--paper);color:var(--paper)}
+.tab-btn[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#1a0c08;font-weight:700}
+.theory-panel{display:none;margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.theory-panel.active{display:block;animation:panelIn .45s var(--ease)}
+@keyframes panelIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.theory-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:22px 26px;border-bottom:1px solid var(--line);background:var(--panel-2)}
+.theory-head h3{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:700}
+.verdict{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:8px 14px;border-radius:3px;border:1px solid}
+.verdict.contested{color:var(--gold);border-color:rgba(201,163,92,.5);background:rgba(201,163,92,.08)}
+.verdict.weak{color:var(--fog);border-color:var(--line-strong)}
+.verdict.open{color:#ff9c84;border-color:rgba(214,84,60,.55);background:var(--red-soft)}
+.theory-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.theory-col{padding:24px 26px}
+.theory-col:first-child{border-right:1px solid var(--line)}
+.theory-col h4{font-family:var(--mono);font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.theory-col.for h4{color:#7fb069}.theory-col.against h4{color:#e2694f}
+.theory-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.theory-col li{position:relative;padding-left:22px;font-size:.9rem;color:var(--paper-dim);line-height:1.55}
+.theory-col li::before{content:"";position:absolute;left:0;top:2px;width:9px;height:9px;border:1.5px solid currentColor;border-radius:2px}
+.theory-col.for li::before{border-color:#7fb069}.theory-col.against li::before{border-color:#e2694f}
+.theory-foot{padding:16px 26px;border-top:1px solid var(--line);font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--fog-dim)}
+
+/* ============ CITA-INTERLUDIO ============ */
+.interlude{
+  position:relative;min-height:52vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:url('https://images.pexels.com/photos/15088074/pexels-photo-15088074.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=2000') center 60%/cover no-repeat fixed;
+  isolation:isolate;padding:60px 20px;
+}
+.interlude::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg) 0%,rgba(13,16,21,.55) 25%,rgba(13,16,21,.6) 70%,var(--bg) 100%)}
+.interlude blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.5rem,4vw,3rem);line-height:1.3;max-width:24ch}
+.interlude cite{display:block;margin-top:22px;font-family:var(--mono);font-style:normal;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+
+/* ============ SECCIÓN 06 — TEST ============ */
+.quiz-shell{
+  max-width:860px;margin:0 auto;background:var(--panel);border:1px solid var(--line-strong);
+  border-radius:12px;overflow:hidden;box-shadow:0 34px 70px rgba(0,0,0,.5);
+}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 26px;border-bottom:1px solid var(--line);background:var(--panel-2)}
+.quiz-top span{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--fog)}
+.quiz-progress{display:flex;gap:6px}
+.quiz-progress i{width:26px;height:4px;border-radius:2px;background:var(--line-strong);transition:background .3s}
+.quiz-progress i.done{background:var(--gold)}.quiz-progress i.now{background:var(--red)}
+.quiz-body{padding:clamp(24px,4vw,40px)}
+.quiz-q{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.75rem);line-height:1.35;font-weight:700;margin-bottom:22px}
+.quiz-opts{display:flex;flex-direction:column;gap:12px}
+.quiz-opt{
+  display:flex;align-items:center;gap:15px;text-align:left;background:var(--bg-2);
+  border:1px solid var(--line);border-radius:8px;padding:15px 17px;color:var(--paper-dim);
+  font-size:.97rem;transition:all .22s;line-height:1.45;
+}
+.quiz-opt:hover:not(:disabled){border-color:var(--gold);color:var(--paper);transform:translateX(6px)}
+.quiz-opt .opt-key{font-family:var(--mono);font-size:.68rem;color:var(--fog);border:1px solid var(--line-strong);border-radius:4px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex:0 0 30px}
+.quiz-opt.correct{border-color:#7fb069;background:rgba(127,176,105,.1);color:#cfe8c0}
+.quiz-opt.wrong{border-color:#e2694f;background:rgba(226,105,79,.1);color:#f3c0b2}
+.quiz-opt:disabled{cursor:default}
+.quiz-explain{margin-top:18px;font-size:.88rem;color:var(--fog);border-left:3px solid var(--gold);padding:10px 14px;background:rgba(201,163,92,.06);display:none}
+.quiz-explain.show{display:block;animation:panelIn .35s var(--ease)}
+.quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:14px;flex-wrap:wrap}
+.quiz-next{background:var(--red);border:none;color:#1a0c08;font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:14px 26px;border-radius:3px;display:none;align-items:center;gap:10px;transition:background .25s}
+.quiz-next:hover{background:#e2694f}
+.quiz-next.show{display:inline-flex}
+.quiz-score-pill{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;color:var(--fog)}
+.quiz-result{text-align:center;padding:10px 10px 4px}
+.result-rank{font-family:var(--serif);font-weight:900;font-size:clamp(1.8rem,5vw,3rem);line-height:1.1;margin:18px 0 10px}
+.result-num{font-family:var(--mono);font-size:3.4rem;font-weight:700;color:var(--red);letter-spacing:-.03em}
+.result-num small{font-size:1.1rem;color:var(--fog)}
+.quiz-result p{color:var(--fog);max-width:52ch;margin:0 auto 6px}
+.quiz-result .again{margin-top:22px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;padding:14px 30px;border-radius:3px;transition:all .25s}
+.quiz-result .again:hover{background:var(--gold);color:#241c08}
+
+/* ============ PIE DE PÁGINA / AYUDA ============ */
+.footer{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:url('https://images.pexels.com/photos/3580098/pexels-photo-3580098.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1900') center 70%/cover no-repeat;
+  border-top:1px solid var(--line);
+}
+.footer::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg) 0%,rgba(13,16,21,.72) 40%,rgba(13,16,21,.9) 100%)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:clamp(80px,10vw,130px) clamp(18px,4.5vw,48px) 40px;text-align:center}
+.footer h2{font-family:var(--serif);font-weight:900;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.05;max-width:20ch;margin:0 auto}
+.footer .lede{margin:24px auto 0;max-width:64ch}
+.help-box{
+  margin:34px auto 0;max-width:720px;border:1px solid rgba(214,84,60,.5);border-radius:10px;
+  background:rgba(214,84,60,.08);padding:22px 26px;text-align:left;
+  display:flex;gap:18px;align-items:flex-start;text-align:left;
+}
+.help-box svg{flex:0 0 34px;width:34px;height:34px;color:var(--red);margin-top:4px}
+.help-box h3{font-family:var(--mono);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:#ff9c84;margin-bottom:8px}
+.help-box p{font-size:.93rem;color:var(--paper-dim)}
+.help-box b{color:var(--paper)}
+.sources{margin-top:56px;border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;text-align:left}
+.sources h4{font-family:var(--mono);font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--fog-dim);margin-bottom:10px}
+.sources ul{list-style:none;font-size:.8rem;color:var(--fog);display:flex;flex-direction:column;gap:5px}
+.disclaimer{margin-top:30px;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--fog-dim);line-height:1.9;max-width:90ch}
+.bottom-line{margin-top:26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--fog-dim)}
+
+/* botón subir */
+#topBtn{
+  position:fixed;bottom:26px;right:26px;z-index:1450;width:54px;height:54px;border-radius:50%;
+  background:var(--red);border:none;color:#1a0c08;display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transform:translateY(14px);transition:all .35s var(--ease);
+  box-shadow:0 12px 30px rgba(214,84,60,.4);
+}
+#topBtn.show{opacity:1;pointer-events:auto;transform:none}
+#topBtn:hover{background:#e2694f}
+#topBtn svg{width:22px;height:22px}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1024px){
+  .corkboard{grid-template-columns:repeat(3,1fr)}
+  .alias-grid{grid-template-columns:repeat(3,1fr)}
+  .science{grid-template-columns:repeat(2,1fr)}
+  .stats .wrap{grid-template-columns:repeat(3,1fr)}
+  .stat{border-top:1px solid var(--line)}
+  .stat:nth-child(-n+3){border-top:none}
+  .case-grid{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .stamp{top:84px;right:14px;padding:10px 14px}
+  .photo-pair{grid-template-columns:1fr}
+  .figure-1,.figure-2{height:260px}
+  /* cronología — una columna a la izquierda */
+  .tl-rail{left:9px;transform:none}
+  .tl-item{grid-template-columns:28px 1fr;margin-bottom:16px}
+  .tl-dot{grid-column:1;grid-row:1}
+  .tl-item:nth-child(odd) .tl-card,.tl-item:nth-child(even) .tl-card{grid-column:2;grid-row:1;text-align:left}
+  .theory-body{grid-template-columns:1fr}
+  .theory-col:first-child{border-right:none;border-bottom:1px solid var(--line)}
+  .corkboard{grid-template-columns:repeat(2,1fr)}
+  .alias-grid{grid-template-columns:repeat(2,1fr)}
+  .scroll-hint{display:none}
+  .interlude{background-attachment:scroll}
+}
+@media (max-width:560px){
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat{border-top:1px solid var(--line)}
+  .stat:nth-child(-n+2){border-top:none}
+  .corkboard{grid-template-columns:1fr;padding:16px}
+  .alias-grid{grid-template-columns:1fr}
+  .alias-card{height:250px}
+  .science{grid-template-columns:1fr}
+  .fact-row{grid-template-columns:1fr;gap:2px}
+  .help-box{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div id="progressBar" aria-hidden="true"></div>
+
+<!-- ============ NAVEGACIÓN ============ -->
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Isdalen — volver arriba">
+    <span class="brand-dot" aria-hidden="true"></span>
+    <span class="brand-text">ISDALEN <em>/ CASO N.º 134/70</em></span>
+  </a>
+  <nav aria-label="Secciones del expediente">
+    <ul class="nav-links">
+      <li><a href="#case" data-nav>Lugar</a></li>
+      <li><a href="#evidence" data-nav>Evidencias</a></li>
+      <li><a href="#timeline" data-nav>Cronología</a></li>
+      <li><a href="#aliases" data-nav>Nombres</a></li>
+      <li><a href="#theories" data-nav>Teorías</a></li>
+      <li><a href="#quiz" data-nav>Test</a></li>
+    </ul>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir el menú" aria-expanded="false" aria-controls="mobileMenu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+  </button>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#case">01 — El lugar de la tragedia</a>
+  <a href="#evidence">02 — El tablero de evidencias</a>
+  <a href="#timeline">03 — Cronología</a>
+  <a href="#aliases">04 — Ocho nombres</a>
+  <a href="#theories">05 — Teorías</a>
+  <a href="#quiz">06 — Ponte a prueba</a>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="La mujer de Isdalen — portada del expediente">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="stamp" aria-hidden="true">Sin resolver<small>Caso frío · 1970</small></div>
+
+  <div class="hero-inner">
+    <p class="hero-kicker"><span class="blink"></span> Caso frío · Noruega · 29.11.1970</p>
+    <h1>La Mujer<span class="line-2">de Isdalen</span></h1>
+    <p class="hero-sub">La encontraron calcinada al pie de una roca en el «Valle de la Muerte», cerca de Bergen. No tenía nombre — solo ocho ajenos. Todas las etiquetas cortadas, todos los rastros borrados, todos los pasaportes falsos. Cincuenta y seis años después, la policía noruega sigue sin saber quién era.</p>
+    <div class="hero-cta">
+      <a class="btn btn-red" href="#case">Abrir el caso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
+      <a class="btn btn-ghost" href="#timeline">Cronología de los eventos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></a>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Desplácese</span>
+    <div class="track"></div>
+  </div>
+
+  <div class="hero-strip" aria-hidden="true">
+    <div class="marquee" id="marqueeTrack">
+      <span>Oslo</span><span>·</span><span>Bergen</span><span>·</span><span>Stavanger</span><span>·</span><span>Trondheim</span><span>·</span><span>París</span><span>·</span><span>Ginebra</span><span>·</span><span><b>Isdalen</b></span><span>·</span><span>Róterdam</span><span>·</span><span>Hamburgo</span><span>·</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESTADÍSTICAS ============ -->
+<div class="stats" aria-label="El caso en cifras">
+  <div class="wrap">
+    <div class="stat"><div class="stat-num"><span class="counter" data-target="8" data-suffix="+">0</span></div><div class="stat-label">seudónimos<br>identificados</div></div>
+    <div class="stat"><div class="stat-num"><span class="counter" data-target="2">0</span></div><div class="stat-label">maletas con pertenencias<br>en la estación de Bergen</div></div>
+    <div class="stat"><div class="stat-num"><span class="counter" data-target="14">0</span></div><div class="stat-label">empastes y coronas de oro —<br>atípicos para Noruega</div></div>
+    <div class="stat"><div class="stat-num"><span class="counter" data-target="0">0</span></div><div class="stat-label">coincidencias de ADN,<br>huellas y dientes</div></div>
+    <div class="stat"><div class="stat-num"><span class="counter" id="yearsCounter" data-target="56">0</span></div><div class="stat-label">años sin respuesta —<br>el caso sigue abierto</div></div>
+  </div>
+</div>
+
+<!-- ============ 01 — LUGAR ============ -->
+<section class="section-pad" id="case">
+  <div class="wrap">
+    <p class="kicker">Sección 01 — El expediente</p>
+    <h2 class="h-display">El valle donde nadie entra<br><span class="thin">tras el anochecer</span></h2>
+
+    <div class="case-grid">
+      <div class="reveal">
+        <p class="lede">Isdalen («el valle de hielo») es una garganta rocosa a tres kilómetros del centro de Bergen, bajo la ladera norte del monte Ulriken. Los locales la llamaban <b class="red">Dødsdalen — el Valle de la Muerte</b>: durante siglos, la gente venía aquí para quitarse la vida. El 29 de noviembre de 1970, hacia las diez de la mañana, un hombre que paseaba con sus dos hijas vio entre las rocas algo que las niñas llevarían consigo el resto de sus vidas.</p>
+
+        <dl class="case-facts">
+          <div class="fact-row"><dt>Lugar del hallazgo</dt><dd><b>Isdalen, Bergen, Noruega</b> — al pie de una empinada ladera de derrubios, a ~3 km del centro</dd></div>
+          <div class="fact-row"><dt>Descubierto por</dt><dd>Un hombre con sus dos hijas (<b>de 10 y 12 años</b>) durante un paseo dominical, 29.11.1970</dd></div>
+          <div class="fact-row"><dt>El caso</dt><dd>Policía de Bergen, <b>caso n.º 134/70</b>. Inspección del lugar — el cuerpo sobre las rocas, cara y torso calcinados, imposible determinar la identidad</dd></div>
+          <div class="fact-row"><dt>Descripción</dt><dd>Mujer, estatura <b>≈164 cm</b>, cabello castaño oscuro/oscuro, ojos marrones, edad <b>25–40</b> (luego revisada a <b>≈40–45</b>)</dd></div>
+          <div class="fact-row"><dt>Estado</dt><dd><b class="red">Sin identificar. Caso no cerrado.</b> Enterrada en el cementerio de Møllendal, Bergen, el 05.02.1971, en una tumba sin nombre</dd></div>
+        </dl>
+      </div>
+
+      <!-- mapa-dossier interactivo -->
+      <div class="map-panel reveal d2" role="region" aria-label="Mapa de la ruta y de los lugares vinculados al caso">
+        <div class="map-head"><span>Mapa de movimientos · 1970</span><span class="defcon">Alto secreto</span></div>
+        <div class="map-body">
+          <svg viewBox="0 0 720 520" role="group" aria-label="Puntos en el mapa: Oslo, Trondheim, Bergen, Stavanger, París, Ginebra e Isdalen">
+            <defs>
+              <pattern id="gridp" width="44" height="44" patternUnits="userSpaceOnUse">
+                <path d="M44 0H0V44" fill="none" stroke="rgba(233,228,214,.055)" stroke-width="1"/>
+              </pattern>
+              <radialGradient id="glow" cx="50%" cy="46%" r="55%">
+                <stop offset="0%" stop-color="rgba(214,84,60,.16)"/><stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+            <rect width="720" height="520" fill="#121722"/>
+            <rect width="720" height="520" fill="url(#gridp)"/>
+            <rect width="720" height="520" fill="url(#glow)"/>
+            <!-- curvas de nivel del terreno -->
+            <g fill="none" stroke="rgba(233,228,214,.07)" stroke-width="1.4">
+              <ellipse cx="360" cy="250" rx="330" ry="235"/><ellipse cx="360" cy="250" rx="245" ry="172"/><ellipse cx="360" cy="250" rx="160" ry="112"/>
+            </g>
+            <!-- ruta «salida»: Oslo → Bergen → París → Ginebra -->
+            <path d="M468,108 L158,258 L150,428 L238,452" fill="none" stroke="#d6543c" stroke-width="2.4" stroke-dasharray="7 7" opacity=".9"/>
+            <!-- ruta «regreso»: Stavanger → Trondheim → Bergen → Isdalen -->
+            <path d="M150,340 L352,64 L158,258 L182,282" fill="none" stroke="#c9a35c" stroke-width="2.4" stroke-dasharray="2 8" stroke-linecap="round" opacity=".95"/>
+            <!-- Oslo -->
+            <g class="map-node" tabindex="0" role="button" data-title="Oslo — la primera parada" data-text="21–24 de marzo de 1970: Viking Hotel, «Genevieve Lancier», Lovaina. La primera aparición documentada en Noruega. Después la pista se corta hasta abril.">
+              <circle class="core" cx="468" cy="108" r="6"/><text x="482" y="103">OSLO</text><text x="482" y="120" opacity=".55" font-size="9">21.03.1970</text>
+            </g>
+            <!-- Trondheim -->
+            <g class="map-node" tabindex="0" role="button" data-title="Trondheim — la pista del norte" data-text="En el otoño de 1970 apareció en Trondheim bajo uno de los seudónimos. Las fichas de registro fueron incautadas después para un análisis grafológico.">
+              <circle class="core" cx="352" cy="64" r="6"/><text x="366" y="60">TRONDHEIM</text><text x="366" y="77" opacity=".55" font-size="9">OCTUBRE 1970</text>
+            </g>
+            <!-- París -->
+            <g class="map-node" tabindex="0" role="button" data-title="París — la pista cortada" data-text="Abril–octubre de 1970: los registros de hoteles la sitúan en París. A la policía noruega no le dejaron verificar los hoteles parisinos — la orden venía «de arriba».">
+              <circle class="core" cx="150" cy="428" r="6"/><text x="118" y="450">PARÍS</text><text x="118" y="467" opacity=".55" font-size="9">ABR.–OCT. 1970</text>
+            </g>
+            <!-- Ginebra -->
+            <g class="map-node" tabindex="0" role="button" data-title="Ginebra — la puerta cerrada" data-text="En la misma línea — Ginebra. Las solicitudes a los archivos suizos fueron bloqueadas o respondidas formalmente. Qué hacía allí — se desconoce.">
+              <circle class="core" cx="238" cy="452" r="6"/><text x="252" y="456">GINEBRA</text><text x="252" y="473" opacity=".55" font-size="9">ABR.–OCT. 1970</text>
+            </g>
+            <!-- Stavanger -->
+            <g class="map-node" tabindex="0" role="button" data-title="Stavanger — las botas" data-text="Octubre–noviembre de 1970: St. Svithun Hotel, nueve días, «Fenella Lorch». Una bolsa de una zapatería entre sus pertenencias llevó hasta un vendedor que la recordaba.">
+              <circle class="core" cx="150" cy="340" r="6"/><text x="118" y="362">STAVANGER</text><text x="118" y="379" opacity=".55" font-size="9">OCT.–NOV. 1970</text>
+            </g>
+            <!-- Bergen -->
+            <g class="map-node" tabindex="0" role="button" data-title="Bergen — la última ciudad" data-text="Finales de marzo y 19–23 de noviembre de 1970: Hotel Bristol, Hotel Skandia, Hordaheimen (habitación 207). El 23 de noviembre dejó el hotel y llamó a un taxi. Seis días después la encontraron muerta.">
+              <circle class="core" cx="158" cy="258" r="7"/><text x="80" y="238">BERGEN</text><text x="80" y="255" opacity=".55" font-size="9">23.11.1970</text>
+            </g>
+            <!-- Isdalen: cruz roja -->
+            <g class="map-node" tabindex="0" role="button" data-title="Isdalen — el lugar del hallazgo" data-text="29 de noviembre de 1970, ~10:10. El cuerpo al pie de la ladera de derrubios bajo el Ulriken. Cerca: un reloj detenido a las 10:10, una botella de licor vacía, un paraguas, rastros de gasolina.">
+              <g stroke="#d6543c" stroke-width="3.4" stroke-linecap="round">
+                <line x1="172" y1="272" x2="192" y2="292"/><line x1="192" y1="272" x2="172" y2="292"/>
+              </g>
+              <circle cx="182" cy="282" r="16" fill="none" stroke="#d6543c" stroke-width="1.3" opacity=".65"/>
+              <text x="206" y="278" fill="#ff9c84" font-weight="700">ISDALEN</text>
+              <text x="206" y="295" fill="#ff9c84" opacity=".7" font-size="9">UNA PERSONA + 2 NIÑOS, 29.11</text>
+            </g>
+            <!-- leyenda -->
+            <g font-family="'JetBrains Mono',monospace" font-size="9.5" letter-spacing="1.5">
+              <line x1="22" y1="496" x2="46" y2="496" stroke="#d6543c" stroke-width="2.2" stroke-dasharray="6 5"/><text x="54" y="500" fill="#96a3b1">SALIDA (PRIMAVERA)</text>
+              <line x1="212" y1="496" x2="236" y2="496" stroke="#c9a35c" stroke-width="2.2" stroke-dasharray="2 6" stroke-linecap="round"/><text x="244" y="500" fill="#96a3b1">REGRESO (OTOÑO)</text>
+              <line x1="440" y1="496" x2="460" y2="496" stroke="#d6543c" stroke-width="3"/><text x="468" y="500" fill="#96a3b1">LUGAR DEL HALLAZGO</text>
+            </g>
+          </svg>
+        </div>
+        <div class="map-info" id="mapInfo" aria-live="polite">
+          <h3>Explore un punto</h3>
+          <p>Haga clic en cualquier nodo del esquema — Oslo, París, Stavanger, Bergen o la cruz de Isdalen — para saber qué ocurría allí en 1970.</p>
+        </div>
+        <div class="map-coords"><span>60.3972° N · 5.3221° E</span><span>Ulriken · Bergen · Noruega</span></div>
+      </div>
+    </div>
+
+    <div class="photo-pair">
+      <figure class="figure figure-1 reveal">
+        <img src="https://images.pexels.com/photos/18307727/pexels-photo-18307727.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1500" alt="Montañas neblinosas y un río en los fiordos de Noruega — paisaje típico de los alrededores de Bergen" loading="lazy">
+        <figcaption>Alrededores de Bergen · niebla · foto: Pexels</figcaption>
+      </figure>
+      <figure class="figure figure-2 reveal d2">
+        <img src="https://images.pexels.com/photos/28583363/pexels-photo-28583363.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100" alt="Vista desde el monte Ulriken sobre Bergen y el lago — el valle de Isdalen se ve claramente desde aquí" loading="lazy">
+        <figcaption>Vista desde el Ulriken sobre Bergen · foto: Pexels</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 — EVIDENCIAS ============ -->
+<section class="section-pad evidence-section" id="evidence">
+  <div class="wrap">
+    <p class="kicker">Sección 02 — El tablero del investigador</p>
+    <h2 class="h-display">El tablero <span class="thin">de evidencias</span></h2>
+    <p class="lede">Cada tarjeta es algo que realmente se encontró en el lugar, en las maletas o durante la autopsia. Haga clic en cualquiera para abrir un fragmento del expediente. Todos los signos identificativos fueron destruidos — por eso precisamente este caso nunca se ha cerrado.</p>
+
+    <div class="corkboard" id="corkboard" aria-label="Tablero de evidencias — elija una tarjeta"></div>
+    <p class="cork-note">«alguien se aseguró, con un cuidado meticuloso, de que nadie la encontrara jamás»</p>
+  </div>
+</section>
+
+<!-- ============ 03 — CRONOLOGÍA ============ -->
+<section class="section-pad" id="timeline">
+  <div class="wrap">
+    <p class="kicker">Sección 03 — La línea de tiempo</p>
+    <h2 class="h-display">Marzo de 1970 → <span class="thin">para siempre</span></h2>
+    <p class="lede">Durante ocho meses viajó por Europa con nombres inventados. Después — seis días de silencio. Después — el hallazgo. Desplácese y siga cómo desaparecía una mujer sin nombre.</p>
+
+    <div class="timeline" id="timelineList">
+      <div class="tl-rail" aria-hidden="true"></div>
+    </div>
+
+    <!-- CIENCIA -->
+    <div class="science" aria-label="Lo que mostró la criminalística">
+      <div class="sci-card reveal">
+        <p class="sci-kicker"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>Isótopos</p>
+        <h4>Una infancia cerca de Núremberg</h4>
+        <p>Análisis de estroncio y oxígeno en el esmalte dental (Universidad de Canberra, 2017): nacimiento hacia 1930 en la zona de Núremberg, luego un traslado a la frontera franco-alemana alrededor de los 14 años.</p>
+      </div>
+      <div class="sci-card reveal d1">
+        <p class="sci-kicker"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19c4-1 6-9 8-13 1.4 3.4 4 9 8 13"/><path d="M2 19h20"/></svg>ADN</p>
+        <h4>Raíces europeas</h4>
+        <p>Perfilación de ADN ampliada en 2016–2017: origen europeo; la línea maternal lleva al sudeste de Europa / suroeste de Asia. La hipótesis de una «agente secreta de Israel» se ha debilitado notablemente.</p>
+      </div>
+      <div class="sci-card reveal d2">
+        <p class="sci-kicker"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18"/><path d="M8 7h8M8 12h8M8 17h8"/></svg>Dientes</p>
+        <h4>14 empastes y oro</h4>
+        <p>Catorce empastes y varias coronas de oro — la calidad del trabajo dental es atípica para la Noruega de la época y apunta a otra escuela odontológica. Las radiografías se enviaron a decenas de países. Respuestas: cero.</p>
+      </div>
+      <div class="sci-card reveal d3">
+        <p class="sci-kicker"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L10 16l-4 1 1-4Z"/></svg>Escritura</p>
+        <h4>Aprendió a escribir a la francesa</h4>
+        <p>Todas las notas y fichas de registro están en alfabeto latino con una educación francófona, pero en alemán e inglés rotos. Una «francesa» que huía de una pista alemana — o una máscara sobre otra máscara.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 — SEUDÓNIMOS ============ -->
+<section class="section-pad aliases-section" id="aliases">
+  <div class="wrap">
+    <p class="kicker">Sección 04 — El archivo de fichas</p>
+    <h2 class="h-display">Ocho <span class="thin">nombres ajenos</span></h2>
+    <p class="lede">Todos los pasaportes eran belgas, todos falsos, cada origen una leyenda. Haga clic en una tarjeta para girarla y leer dónde y cuándo vieron a esta «mujer».</p>
+
+    <div class="alias-grid" id="aliasGrid"></div>
+    <p class="cork-note" style="color:#8fa3b8">ni un solo nombre real · ni una sola foto de documento real</p>
+  </div>
+</section>
+
+<!-- ============ CITA-INTERLUDIO ============ -->
+<div class="interlude" role="img" aria-label="Amanecer sobre las colinas de Bergen, bruma">
+  <blockquote>«Dødsdalen — el Valle de la Muerte.<br>El lugar donde Bergen despedía sus secretos»<cite>Isdalen · Høgdalen · el nombre local</cite></blockquote>
+</div>
+
+<!-- ============ 05 — TEORÍAS ============ -->
+<section class="section-pad" id="theories">
+  <div class="wrap">
+    <p class="kicker">Sección 05 — Las hipótesis</p>
+    <h2 class="h-display">Quién pudo <span class="thin">ser ella</span></h2>
+    <p class="lede">La versión oficial — un «suicidio probable» — solo convenció a quienes la plantearon. Las demás hipótesis llevan décadas apoyándose en pruebas indirectas. Cambie de hipótesis.</p>
+
+    <div class="tabs-bar" role="tablist" aria-label="Teorías sobre la identidad y la muerte de la mujer de Isdalen" id="theoryTabs"></div>
+    <div id="theoryPanels"></div>
+
+    <div class="theory-foot" style="border:1px solid var(--line);border-radius:8px;margin-top:18px;background:var(--bg-2)">VEREDICTO OFICIAL DE 1970: «suicidio probable» · PERITACIÓN INDEPENDIENTE: el caso no puede considerarse resuelto · ESTADO 2026: abierto</div>
+  </div>
+</section>
+
+<!-- ============ 06 — TEST ============ -->
+<section class="section-pad" id="quiz" style="background:var(--bg-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <p class="kicker">Sección 06 — Prueba de memoria</p>
+    <h2 class="h-display" style="text-align:center">¿Será usted el <span class="thin">investigador</span>?</h2>
+    <p class="lede" style="margin:0 auto 44px;text-align:center">Seis preguntas basadas en el expediente. Sin pistas — como en el interrogatorio del 23 de diciembre de 1970.</p>
+
+    <div class="quiz-shell" role="region" aria-label="Test interactivo sobre el caso n.º 134/70">
+      <div class="quiz-top">
+        <span>Interrogatorio del testigo · protocolo</span>
+        <div class="quiz-progress" id="quizProgress" aria-hidden="true"></div>
+      </div>
+      <div class="quiz-body" id="quizBody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PIE DE PÁGINA / AYUDA ============ -->
+<footer class="footer" id="help">
+  <div class="footer-inner">
+    <p class="kicker" style="justify-content:center">El desenlace está en sus manos</p>
+    <h2>Hasta hoy <span class="red">no se ha dado<br>su nombre</span></h2>
+    <p class="lede">Alguien en Europa notó a finales de 1970 la desaparición de una mujer: una hermana, un marido, un colega, una vecina. Nadie lo denunció a la policía — o la denuncia se perdió. Si usted reconoce en esta descripción a alguien de su familia o de su propia historia, podría ser la única clave del caso n.º 134/70.</p>
+
+    <div class="help-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+      <div>
+        <h3>Si usted tiene información</h3>
+        <p>Contacte a la <b>Policía de Bergen (Bergen politidistrikt)</b> o al servicio nacional de investigación criminal de Noruega, <b>Kripos</b>. El caso tiene un <b>Black Notice</b> de Interpol abierto para cuerpos sin identificar. Cualquier detalle — un pasaporte antiguo, una pariente nacida en los años treinta que desapareció, una persona con una historia «bergenesa» — podría poner fin a cincuenta y seis años de silencio.</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <div>
+        <h4>Fuentes</h4>
+        <ul>
+          <li>NRK — el pódcast «Mørkerom» / investigación de Marit Higraff (2016)</li>
+          <li>BBC World Service — «Death in Ice Valley» (Neil McCarthy)</li>
+          <li>Kripos / Policía de Bergen — expediente del caso n.º 134/70</li>
+          <li>Bergens Tidende (BT) — publicaciones de archivo</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fotografías</h4>
+        <ul>
+          <li>Pexels.com — fotografías de licencia libre</li>
+          <li>Bergen · Ulriken · fiordos · Bryggen</li>
+          <li>No existe ninguna fotografía de retrato de la mujer en el dominio público</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Estado de la investigación</h4>
+        <ul>
+          <li>2016 — el caso reabierto por Kripos y NRK/BBC</li>
+          <li>2017 — análisis isotópico de los dientes, perfil de ADN ampliado</li>
+          <li>Hoy — identidad sin determinar; el caso sigue abierto</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="disclaimer">Un proyecto documental independiente basado en fuentes abiertas. Los detalles del caso varían según las publicaciones (números de habitación, transcripciones de los seudónimos, fecha exacta de las anotaciones cifradas); se presentan las versiones mejor corroboradas. La identidad de la mujer no ha sido establecida por ninguna fuente oficial al momento de la publicación. Todas las coincidencias son probabilísticas.</p>
+
+    <div class="bottom-line">
+      <span>ISDALEN · CASO N.º 134/70</span>
+      <span>El «Valle de la Muerte» recuerda a todos, menos a ella</span>
+      <span>© 1970 → ∞</span>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<!-- modal de evidencia -->
+<div class="modal-backdrop" id="evidenceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal" role="document">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar la tarjeta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="modal-tag" id="modalTag">Evidencia</p>
+    <h3 id="modalTitle">Título</h3>
+    <p id="modalKnown"></p>
+    <div class="why"><b>Por qué es importante</b><span id="modalWhy"></span></div>
+    <p class="modal-stamp">Archivo · policía de Bergen</p>
+  </div>
+</div>
+
+<button id="topBtn" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+</button>
+
+<script>
+/* =========================================================
+   LA MUJER DE ISDALEN — toda la lógica en JS puro
+   ========================================================= */
+'use strict';
+
+/* ---------- progreso de lectura + botón subir ---------- */
+const progressBar = document.getElementById('progressBar');
+const topBtn = document.getElementById('topBtn');
+let ticking = false;
+function onScroll(){
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    progressBar.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + '%';
+    topBtn.classList.toggle('show', doc.scrollTop > 620);
+    ticking = false;
+  });
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ---------- menú móvil ---------- */
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(open));
+});
+mobileMenu.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') mobileMenu.classList.remove('open');
+});
+
+/* ---------- duplicar la cinta para la continuidad ---------- */
+const marquee = document.getElementById('marqueeTrack');
+marquee.innerHTML += marquee.innerHTML;
+
+/* ---------- scroll suave + elemento de menú activo ---------- */
+const navMap = new Map();
+document.querySelectorAll('[data-nav]').forEach(a => navMap.set(a.getAttribute('href').slice(1), a));
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const link = navMap.get(entry.target.id);
+    if (link && entry.isIntersecting) {
+      navMap.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-38% 0px -55% 0px', threshold: 0 });
+['case','evidence','timeline','aliases','theories','quiz'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) sectionObserver.observe(el);
+});
+
+/* ---------- aparición de bloques al hacer scroll ---------- */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ---------- contadores de estadísticas (años calculados desde la fecha actual) ---------- */
+const yearsEl = document.getElementById('yearsCounter');
+yearsEl.dataset.target = String(new Date().getFullYear() - 1970);
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = Number(el.dataset.target || 0);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1500, start = performance.now();
+    function frame(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(2, -10 * p);
+      const value = p === 1 ? target : Math.round(target * eased);
+      el.textContent = value + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    counterObserver.unobserve(el);
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+/* =========================================================
+   MAPA-DOSSIER — clics en los nodos
+   ========================================================= */
+const mapInfo = document.getElementById('mapInfo');
+document.querySelectorAll('.map-node').forEach(node => {
+  const activate = () => {
+    mapInfo.innerHTML = '<h3>' + node.dataset.title + '</h3><p>' + node.dataset.text + '</p>';
+  };
+  node.addEventListener('click', activate);
+  node.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+  });
+});
+
+/* =========================================================
+   TABLERO DE EVIDENCIAS + MODAL
+   ========================================================= */
+const EVIDENCE = [
+  { tag: 'Escena del crimen', title: 'La postura de «boxeador» del cuerpo', r: '-1.4deg',
+    known: 'El cuerpo estaba boca arriba, con los brazos flexionados hacia adelante como en una guardia de boxeo. Es un signo clásico de quemadura en vida: los músculos se contraen por efecto de las llamas. El cabello estaba recogido con una cinta azul y blanca.',
+    why: 'La postura demuestra que el incendio empezó cuando la mujer estaba viva. No pudo huir — y no se defendió.' },
+  { tag: 'Autopsia · Gades Institutt', title: 'Hollín en los pulmones', r: '1.1deg',
+    known: 'Autopsia del 1 de diciembre de 1970 (patólogo Torstein K. Haugen): hollín en las vías respiratorias, monóxido de carbono y 50–70 comprimidos de fenobarbital (Fenemal). Concentración en sangre de 4,5 mg/l; parte de los comprimidos nunca se disolvió.',
+    why: 'Estaba respirando durante el incendio. La combinación «comprimidos + inmolación» es físicamente casi imposible de lograr en solitario.' },
+  { tag: 'Autopsia', title: 'Un hematoma en el lado derecho del cuello', r: '-0.8deg',
+    known: 'La única lesión que el fuego no explica: un hematoma redondeado en el lado derecho del cuello. La investigación lo registró y… no dio ninguna interpretación.',
+    why: '¿Un golpe? ¿Una caída? ¿Una sujeción? Ninguna de estas hipótesis se comprobó de verdad.' },
+  { tag: 'Pieza del lugar', title: 'Un reloj detenido a las 10:10', r: '1.6deg',
+    known: 'Un reloj de pulsera mecánico junto al cuerpo se había detenido a las 10:10. El 29 de noviembre de 1970, a esa hora ya había luz en Isdalen — visible desde la ladera.',
+    why: 'Si el reloj se detuvo por un impacto o por el fuego, esa es la hora exacta de la catástrofe. Extraño que a plena luz del día, en plena hora de paseos, nadie oyera nada.' },
+  { tag: 'Equipaje', title: 'Dos maletas en la estación', r: '-1.8deg',
+    known: 'El 2 de diciembre de 1970 se encontrarán dos maletas en la consigna de la estación de Bergen. El vínculo con el cuerpo se establecerá por una huella parcial en unas gafas de sol. La propietaria nunca reclamó el equipaje.',
+    why: 'Iba a irse para siempre — pero nunca recogió sus cosas. O no volvió por voluntad de otra persona, o planeaba no volver jamás.' },
+  { tag: 'Documentos', title: 'El cuaderno cifrado', r: '0.9deg',
+    known: 'Una libreta pequeña con columnas de letras y cifras: «22 O R», «23 G M», etc. Los expertos reconstruyeron la lógica: son fechas y paradas — Oslo, Róterdam, París, Hamburgo y otras ciudades de la ruta.',
+    why: 'El único «idioma» en el que dejó una huella de sí misma. El cifrado no es la letra de un espía de cine: existe para que incluso un cuaderno hallado no diga nada.' },
+  { tag: 'Guardarropa', title: 'Pelucas y gafas sin graduación', r: '-1.1deg',
+    known: 'Varias pelucas (hasta ocho según algunas fuentes) y gafas sin graduación, además de unas gafas de sol con una huella dactilar parcial. Las gafas corrientes y las gafas «de disfraz» cumplían un mismo propósito: la cara no debe recordarse.',
+    why: 'Disciplina profesional de la apariencia. Una turista no se comporta así.' },
+  { tag: 'Rastros', title: 'Etiquetas cortadas por todas partes', r: '1.4deg',
+    known: 'De la ropa, los zapatos, los cosméticos e incluso del tubo de crema para el eccema, cortaron o borraron todas las marcas de fábrica y la receta. Las etiquetas estaban ausentes en absolutamente todo.',
+    why: 'Una destrucción metódica del origen de las cosas — no pánico, sino un plan. Trabajo que se mide en semanas, no en minutos.' },
+  { tag: 'Finanzas', title: 'Divisa cosida en el forro', r: '-0.6deg',
+    known: 'Cosida en el forro de su ropa: 100 marcos alemanes; en el equipaje: 135 coronas noruegas y monedas de Bélgica, Gran Bretaña y Suiza. Además, calderilla de varios países.',
+    why: 'La geografía del dinero repite la ruta: Bélgica → Alemania → Francia → Suiza → Noruega. Todo pagado en efectivo.' },
+  { tag: 'Testigos', title: 'Las botas de Stavanger', r: '1.9deg',
+    known: 'Entre sus pertenencias encontraron una bolsa de una zapatería de Stavanger. El dueño identificó a la compradora de las botas de goma: «una mujer bien vestida y agradable».',
+    why: 'El último punto geográfico preciso antes de Bergen. La compra — octubre–noviembre de 1970.' },
+  { tag: 'Escena del crimen', title: 'Gasolina sin recipiente', r: '-1.5deg',
+    known: 'Bajo el cuerpo se hallaron rastros de gasolina. No se encontró en el lugar ningún recipiente — lata o botella — con gasolina. El contenido de un bolsillo con calderilla y cerillas estaba parcialmente quemado.',
+    why: 'Alguien trajo el combustible — y se lo llevó. La versión «lo hizo todo ella misma» exige que se llevara el recipiente vacío — a pie, por una ladera rocosa.' },
+  { tag: 'Identidad', title: 'Un icono de la Virgen con el Niño', r: '0.7deg',
+    known: 'Entre sus pertenencias había un pequeño icono/imagen católica de la Virgen con el Niño. Por eso, el 5 de febrero de 1971 recibió funeral católico y fue enterrada en una tumba sin nombre del cementerio de Møllendal.',
+    why: 'La única «dirección eclesiástica» de una mujer que no tenía ni nombre ni dirección. Una católica — de esa Europa donde se hablaba francés y alemán.' }
+];
+
+const corkboard = document.getElementById('corkboard');
+const modal = document.getElementById('evidenceModal');
+const modalTag = document.getElementById('modalTag');
+const modalTitle = document.getElementById('modalTitle');
+const modalKnown = document.getElementById('modalKnown');
+const modalWhy = document.getElementById('modalWhy');
+const modalClose = document.getElementById('modalClose');
+let lastFocused = null;
+
+EVIDENCE.forEach((item) => {
+  const btn = document.createElement('button');
+  btn.className = 'evidence-card';
+  btn.style.setProperty('--r', item.r);
+  btn.setAttribute('aria-haspopup', 'dialog');
+  btn.innerHTML =
+    '<span class="ev-tag">' + item.tag + '</span>' +
+    '<span class="ev-title">' + item.title + '</span>' +
+    '<span class="ev-more">Abrir el expediente <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>';
+  btn.addEventListener('click', () => openModal(item, btn));
+  corkboard.appendChild(btn);
+});
+
+function openModal(item, trigger){
+  lastFocused = trigger;
+  modalTag.textContent = item.tag;
+  modalTitle.textContent = item.title;
+  modalKnown.textContent = item.known;
+  modalWhy.textContent = item.why;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  modalClose.focus();
+}
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (lastFocused) lastFocused.focus();
+}
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+});
+
+/* =========================================================
+   CRONOLOGÍA
+   ========================================================= */
+const TIMELINE = [
+  { date: 'c. 1930', title: 'Nacimiento — la zona de Núremberg', text: 'El perfil isotópico del esmalte dental (estroncio, oxígeno) señalará una infancia en el centro de Baviera, lo más probable en los alrededores de Núremberg. La fecha exacta y el nombre son desconocidos.', key: false },
+  { date: '≈ 1944', title: 'Traslado a la frontera franco-alemana', text: 'Hacia los 14 años se encontró en la frontera entre Francia y Alemania — una región donde se entrelazan las huellas culturales francesas, alemanas y belgas. Fue entonces cuando su esmalte dental «registró» la nueva dirección.', key: false },
+  { date: '21–24.03.1970', title: 'Oslo · Viking Hotel · «Genevieve Lancier»', text: 'La primera aparición conocida en Noruega. Ficha de registro: Genevieve Lancier, Lovaina, Bélgica. Caligrafía — mayúsculas impresas, educación francófona.', key: false },
+  { date: 'Finales de marzo de 1970', title: 'Bergen · Bristol y Skandia · «Claudia Tielt»', text: 'Va de hotel en hotel, presentándose cada vez como residente de Bélgica. El personal recuerda a una «mujer bien vestida, reservada, con acento».', key: false },
+  { date: '01.04.1970', title: 'Salida de Noruega. París → Ginebra', text: 'Ella deja el país. La siguiente parada — París, luego Ginebra. La policía noruega pide verificar estas ciudades — y recibe de hecho una negativa «de arriba». Lo que allí ocurrió es el mayor vacío del caso.', key: true },
+  { date: 'Octubre – noviembre de 1970', title: 'El regreso: Stavanger → Trondheim → Bergen', text: 'Nueve días en el St. Svithun Hotel (Stavanger) como «Fenella Lorch». Luego Trondheim. En todas partes — pago en efectivo, pocas palabras, constantes cambios de habitación y de ciudad.', key: false },
+  { date: '19–23.11.1970', title: 'Último registro: Hordaheimen Hotel', text: 'Bergen, habitación 207. Llegada el 19 de noviembre. El 23 de noviembre deja el hotel y llama a un taxi. El personal recordó: un gorro de piel, gachas de avena en el desayuno, un fuerte olor a ajo y un hueco notable entre los dientes de delante.', key: true },
+  { date: '22–23.11.1970', title: 'El capitán Ketil Kversøy la ve en el sendero', text: 'Un capitán pesquero nota a una mujer asustada en el sendero de montaña sobre Isdalen — y a dos hombres que la siguen. Pocos días después de esta declaración la encontrarán muerta.', key: true },
+  { date: '29.11.1970', title: 'Hallazgo del cuerpo en Isdalen', text: 'Domingo, hacia las diez de la mañana. Un hombre con sus dos hijas (de 10 y 12) encuentra al pie de la ladera de derrubios el cuerpo calcinado de una mujer. La cara es irreconocible. Cerca yacen un reloj, un paraguas y una botella de licor St. Hallvard vacía.', key: true },
+  { date: '01.12.1970', title: 'Autopsia: fuego + 50–70 comprimidos de Fenemal', text: 'Monóxido de carbono y fenobarbital. Hollín en los pulmones — estaba respirando durante el incendio. Un hematoma en el lado derecho del cuello — sin explicación. Edad: unos 40–45 años; estatura 164 cm; ojos marrones.', key: false },
+  { date: '02.12.1970', title: 'Dos maletas en la estación de Bergen', text: 'La consigna. La huella de las gafas de sol coincide con una huella tomada del cuerpo. Dentro: pelucas, gafas sin graduación, marcos cosidos en el forro, un cuaderno con cifrado, etiquetas cortadas de todo.', key: false },
+  { date: '22.12.1970', title: 'Caso cerrado: «suicidio probable»', text: 'El detective Oscar Hordnes cierra el caso 23 días después del hallazgo — antes de recibir los resultados de la autopsia. Mientras tanto, los servicios de inteligencia noruegos abren su propia investigación secreta. Esta solo saldrá a la luz décadas después.', key: true },
+  { date: '05.02.1971', title: 'Un funeral sin nombre · Møllendal', text: 'Rito católico (entre sus pertenencias se encontró una imagen de la Virgen con el Niño). Ataúd de zinc, tumba sin nombre, cementerio de Møllendal, Bergen. La policía está presente — como en el entierro de un desconocido.', key: false },
+  { date: '2016', title: 'NRK + BBC: el caso se reabre', text: 'El pódcast «Mørkerom» y «Death in Ice Valley» desentierran el archivo. Kripos reanuda las peritaciones: Black Notice de Interpol, perfil de ADN ampliado, isotopía dental.', key: false },
+  { date: '2017 en adelante', title: 'Núremberg → la frontera franco-alemana', text: 'Isótopos del esmalte: nacimiento cerca de Núremberg (~1930), traslado a la frontera en la adolescencia. ADN: una europea; la línea maternal — sudeste de Europa. Nada de Israel en la genética. Ningún nombre encontrado.', key: false },
+  { date: 'Hoy', title: 'El nombre es desconocido. El caso está abierto.', text: 'Ningún archivo, ninguna base de datos, ningún recuerdo familiar ha dado con un nombre. La mujer de Isdalen sigue siendo la persona sin nombre más célebre de Europa.', key: true }
+];
+
+const timelineList = document.getElementById('timelineList');
+TIMELINE.forEach(item => {
+  const li = document.createElement('article');
+  li.className = 'tl-item reveal' + (item.key ? ' key' : '');
+  li.innerHTML =
+    '<div class="tl-card"><p class="tl-date">' + item.date + '</p>' +
+    '<h3>' + item.title + '</h3><p>' + item.text + '</p></div>' +
+    '<div class="tl-dot" aria-hidden="true"></div>';
+  timelineList.appendChild(li);
+  revealObserver.observe(li);
+});
+
+/* =========================================================
+   TARJETA DE SEUDÓNIMO (girar)
+   ========================================================= */
+const ALIASES = [
+  { name: 'Genevieve Lancier', legend: 'Lovaina, Bélgica', hotel: 'Viking Hotel, Oslo', when: '21–24 de marzo de 1970', note: 'El primer registro conocido en Noruega. La ficha se conservó; la caligrafía — mayúsculas impresas, educación francófona.' },
+  { name: 'Claudia Tielt', legend: 'Bruselas, Bélgica', hotel: 'Hotel Bristol / Hotel Skandia, Bergen', when: 'Finales de marzo de 1970', note: '«De Bruselas». El personal recordó el acento y que cambiaba de habitación sin explicaciones.' },
+  { name: 'Claudia Nielsen', legend: 'Bélgica / Dinamarca', hotel: 'Bergen', when: 'Marzo–abril de 1970', note: 'Un híbrido: nombre belga + terminación danonoruega. La máscara se deshacia — o era un rasgo deliberado.' },
+  { name: 'Alexia Zarne-Merchez', legend: 'Europa del Este', hotel: 'según el expediente', when: 'Primavera de 1970', note: 'La más «oriental» de las leyendas — suena a apellidos rumanos y polacos. Tal vez una huella de su línea maternal.' },
+  { name: 'Vera Jarle', legend: 'Escandinavia', hotel: 'según el expediente', when: '1970', note: 'Un nombre corto que suena «propio» para Noruega. Cuanto más peligrosa se volvía, más nórdicos sonaban los seudónimos.' },
+  { name: 'Vera Schlosseneck', legend: 'Alemania', hotel: 'según el expediente', when: '1970', note: '«Colina del castillo» en alemán. Un nombre elocuente para una mujer nacida cerca de Núremberg — si se cree a los isótopos.' },
+  { name: 'Fenella Lorch', legend: 'Bélgica', hotel: 'St. Svithun Hotel (Stavanger) → Hordaheimen Hotel (Bergen)', when: 'Octubre – 23 de noviembre de 1970', note: 'La pista más larga — 9 días en Stavanger — y la última: Hordaheimen, habitación 207. Dejó el hotel el 23 de noviembre.' },
+  { name: 'Elisabeth Leenhouwfr', legend: 'Bélgica', hotel: 'Hordaheimen Hotel, Bergen (según algunas fuentes)', when: 'Noviembre de 1970', note: 'En algunas publicaciones aparece como el nombre con el que dejó el hotel el 23 de noviembre. Dos nombres finales — para una sola salida.' }
+];
+
+const aliasGrid = document.getElementById('aliasGrid');
+ALIASES.forEach((a, i) => {
+  const card = document.createElement('button');
+  card.className = 'alias-card';
+  card.setAttribute('aria-pressed', 'false');
+  card.setAttribute('aria-label', 'Seudónimo ' + a.name + ' — girar la tarjeta');
+  const num = String(i + 1).padStart(2, '0');
+  card.innerHTML =
+    '<span class="alias-face alias-front">' +
+      '<span class="alias-num">DOSSIER · ' + num + ' / 08</span>' +
+      '<span class="alias-name">' + a.name + '</span>' +
+      '<span class="alias-nation">Leyenda: ' + a.legend + '</span>' +
+      '<span class="alias-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Haga clic — reverso de la tarjeta</span>' +
+    '</span>' +
+    '<span class="alias-face alias-back">' +
+      '<span class="bk-label">Ficha de vigilancia</span>' +
+      '<p><b>Dónde:</b> ' + a.hotel + '</p>' +
+      '<p><b>Cuándo:</b> ' + a.when + '</p>' +
+      '<p>' + a.note + '</p>' +
+      '<span class="bk-foot">Todos los pasaportes falsos · Bélgica</span>' +
+    '</span>';
+  card.addEventListener('click', () => {
+    const flipped = card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed', String(flipped));
+  });
+  aliasGrid.appendChild(card);
+});
+
+/* =========================================================
+   TEORÍAS — pestañas
+   ========================================================= */
+const THEORIES = [
+  {
+    id: 'spy', label: 'Correo de la Guerra Fría', title: 'Agente, correo o «cartera» de un servicio de inteligencia', verdict: 'open', verdictText: 'Estado: no probada, pero tampoco refutada',
+    for: [
+      'Ocho pasaportes «belgos» falsos — un nivel inaccesible para un particular en 1970',
+      'Un cuaderno cifrado de la ruta; pago solo en efectivo; estricta conspiración',
+      'Sus viajes coincidieron con las pruebas del misil antibuque «Penguin» — Bergen era una base naval clave de la OTAN',
+      'Testigos la vieron en compañía de un oficial naval durante el periodo de pruebas',
+      'La inteligencia noruega abrió una investigación secreta paralela — y bloqueó la verificación de París y Ginebra'
+    ],
+    against: [
+      'Un agente profesional no va de hotel en hotel bajo ocho nombres y no parece una «extranjera sospechosa»',
+      'Era demasiado visible: cambiaba de habitación, hablaba con acento, era vista por decenas de personas',
+      'La coincidencia con el «Penguin» puede ser casual: Bergen es simplemente un gran puerto',
+      'Ningún servicio secreto — ni de la OTAN ni del bloque del Este — la reivindicó como su agente',
+      'El ADN apunta a Europa; la «pista israelí» (Mossad) no está confirmada por la genética'
+    ],
+    foot: 'HIPÓTESIS EXAMINADA POR KRIPOS · LA INVESTIGACIÓN SECRETA DE INTELIGENCIA SALIÓ A LA LUZ EN 2016'
+  },
+  {
+    id: 'suicide', label: 'Oficial: el suicidio', title: 'Una salida voluntaria — o la desesperación', verdict: 'contested', verdictText: 'Estado: oficial, pero cuestionada',
+    for: [
+      '50–70 comprimidos de fenobarbital antes del fuego — un cuadro clásico de intoxicación farmacológica',
+      'La destrucción de todo rastro de identidad es coherente con el deseo de «borrarse a sí misma»',
+      'Durante décadas, Isdalen fue conocida como un lugar donde la gente se quitaba la vida',
+      'Una botella de licor St. Hallvard vacía y cerillas junto al cuerpo'
+    ],
+    against: [
+      'Un suicidio con la combinación «comprimidos + fuego» es físicamente casi imposible: tras 50 comprimidos una persona pierde el conocimiento antes de poder provocar un fuego',
+      'Hay menos gasolina en su ropa que en el suelo bajo el cuerpo — estaba sentada en un fuego que alguien más provocó',
+      'El recipiente de gasolina desapareció del lugar',
+      'El caso se cerró tras 23 días, antes de la autopsia — con una prisa inexplicable',
+      'El hematoma en el lado derecho del cuello no encaja en ninguna reconstrucción suicida'
+    ],
+    foot: 'EL VEREDICTO DE LA POLICÍA DE BERGEN DEL 22.12.1970 · LOS RESULTADOS DE LA AUTOPSIA AÚN NO ESTABAN LISTOS'
+  },
+  {
+    id: 'murder', label: 'Un asesinato escenificado', title: 'Una muerte disfrazada de suicidio', verdict: 'open', verdictText: 'Estado: la principal alternativa a la versión oficial',
+    for: [
+      'Ketil Kversøy la vio en el sendero con dos hombres 6 días antes de su muerte — «asustada»',
+      'Hematoma en el cuello + hollín en los pulmones + sin recipiente: la escena del fuego no cuadra sin una tercera persona',
+      'La «limpiaron» durante meses — un trabajo que requiere recursos y una decisión',
+      'La inteligencia se interesó por el caso desde el primer día y no permitió verificar París y Ginebra',
+      'El caso se cerró antes de los resultados de la autopsia — como si alguien necesitara una rápida anotación de «cerrado»'
+    ],
+    against: [
+      'Ni un solo testigo del crimen, ni una sola huella de un extraño, ni una sola prueba directa',
+      'Das Mordmotiv wurde nie rekonstruiert: kein Raub, minimale Spuren eines Kampfes',
+      'Si los servicios secretos la «eliminaron», los rastros de esa operación fueron destruidos impecablemente — lo cual es en sí sospechosamente conveniente'
+    ],
+    foot: 'LA MAYORÍA DE LOS INVESTIGADORES INDEPENDIENTES CONSIDERA EL SUICIDIO NO PROBADO'
+  },
+  {
+    id: 'fugitive', label: 'Una fugitiva de su pasado', title: 'La mujer que huyó — y fue alcanzada', verdict: 'weak', verdictText: 'Estado: humana, pero indemostrable',
+    for: [
+      'Un borrado sistemático de sí misma: pelucas, gafas sin graduación, etiquetas cortadas, dinero cosido',
+      'El icono de la Virgen entre sus cosas — el único apego personal que conservó',
+      'Pago siempre en efectivo, rechazo de cualquier documento con foto',
+      'Mudanzas y cambios de habitación constantes — comportamiento de quien teme ser encontrado'
+    ],
+    against: [
+      'Una huida en pánico suele ser caótica; sus actos son metódicos y planificados meses antes',
+      'Ninguna familia, amiga ni empleador que denunciara su desaparición fue encontrado jamás',
+      'Una ruta que pasa por un campo de pruebas de la OTAN parece algo más que una huida personal'
+    ],
+    foot: 'LA HIPÓTESIS MÁS «TRANQUILA» · NO NECESITA SERVICIOS SECRETOS · NO EXPLICA NI LA GASOLINA NI EL CUELLO'
+  }
+];
+
+const tabsBar = document.getElementById('theoryTabs');
+const panelsWrap = document.getElementById('theoryPanels');
+
+THEORIES.forEach((t, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn';
+  btn.id = 'tab-' + t.id;
+  btn.setAttribute('role', 'tab');
+  btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+  btn.setAttribute('aria-controls', 'panel-' + t.id);
+  btn.textContent = t.label;
+  tabsBar.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'theory-panel' + (i === 0 ? ' active' : '');
+  panel.id = 'panel-' + t.id;
+  panel.setAttribute('role', 'tabpanel');
+  panel.setAttribute('aria-labelledby', 'tab-' + t.id);
+  panel.innerHTML =
+    '<div class="theory-head"><h3>' + t.title + '</h3>' +
+    '<span class="verdict ' + t.verdict + '">' + t.verdictText + '</span></div>' +
+    '<div class="theory-body">' +
+      '<div class="theory-col for"><h4>Argumentos a favor</h4><ul>' + t.for.map(x => '<li>' + x + '</li>').join('') + '</ul></div>' +
+      '<div class="theory-col against"><h4>Argumentos en contra</h4><ul>' + t.against.map(x => '<li>' + x + '</li>').join('') + '</ul></div>' +
+    '</div>' +
+    '<div class="theory-foot">' + t.foot + '</div>';
+  panelsWrap.appendChild(panel);
+});
+
+function selectTab(id){
+  tabsBar.querySelectorAll('.tab-btn').forEach(b => b.setAttribute('aria-selected', String(b.id === 'tab-' + id)));
+  panelsWrap.querySelectorAll('.theory-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + id));
+}
+tabsBar.addEventListener('click', (e) => {
+  const btn = e.target.closest('.tab-btn');
+  if (btn) selectTab(btn.id.replace('tab-', ''));
+});
+tabsBar.addEventListener('keydown', (e) => {
+  const keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End'];
+  if (!keys.includes(e.key)) return;
+  const tabs = Array.from(tabsBar.querySelectorAll('.tab-btn'));
+  const current = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+  let next = current;
+  if (e.key === 'ArrowRight') next = (current + 1) % tabs.length;
+  if (e.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+  if (e.key === 'Home') next = 0;
+  if (e.key === 'End') next = tabs.length - 1;
+  e.preventDefault();
+  tabs[next].focus();
+  selectTab(tabs[next].id.replace('tab-', ''));
+});
+
+/* =========================================================
+   TEST «CONVIÉRTASE EN INVESTIGADOR»
+   ========================================================= */
+const QUIZ = [
+  { q: '¿Dónde y cuándo encontraron el cuerpo?',
+    opts: ['En un fiordo cerca de Stavanger, diciembre de 1970', 'En el valle de Isdalen cerca de Bergen, el 29 de noviembre de 1970', 'En la estación central de Oslo, el 11 de noviembre de 1970'],
+    a: 1, exp: 'Un domingo por la mañana, un padre paseaba con sus dos hijas (de 10 y 12) por Isdalen — el «valle de hielo» que los locales llamaban el Valle de la Muerte.' },
+  { q: '¿Qué se había hecho con su ropa y sus pertenencias?',
+    opts: ['Todos los objetos llevaban etiquetas con el nombre «Fenella Lorch»', 'La ropa estaba completamente nueva, con etiquetas de tienda', 'Todas las etiquetas, recetas y marcas habían sido cortadas o borradas'],
+    a: 2, exp: 'Cada etiqueta — en la ropa, el calzado, los cosméticos, incluso en la receta de la crema para el eccema. Destrucción total del origen de las cosas.' },
+  { q: '¿Cuántos seudónimos se lograron establecer?',
+    opts: ['Uno — «Fenella Lorch»', 'Al menos ocho', 'Tres: Lancier, Tielt, Nielsen'],
+    a: 1, exp: 'Genevieve Lancier, Claudia Tielt, Claudia Nielsen, Alexia Zarne-Merchez, Vera Jarle, Vera Schlosseneck, Fenella Lorch, Elisabeth Leenhouwfr — y son solo los confirmados.' },
+  { q: '¿Qué la vinculaba con las dos maletas de la estación?',
+    opts: ['Una etiqueta del hotel Hordaheimen en el asa de la maleta', 'Iniciales en el forro', 'Una huella dactilar parcial en las gafas de sol que coincidía con una huella tomada del cuerpo'],
+    a: 2, exp: 'Las maletas esperaban en la consigna de la estación de Bergen. La huella en las gafas — lo único que identificó las pertenencias como suyas.' },
+  { q: '¿Qué mostró el análisis isotópico del esmalte dental (2017)?',
+    opts: ['Nació y creció en Noruega', 'Infancia cerca de Núremberg, adolescencia cerca de la frontera franco-alemana', 'Nacida en EE. UU., criada en Francia'],
+    a: 1, exp: 'Estroncio y oxígeno en el esmalte: nacimiento hacia 1930 en la zona de Núremberg; traslado a la frontera franco-alemana alrededor de los 14 años.' },
+  { q: '¿Cómo calificó la policía oficialmente el caso el 22 de diciembre de 1970?',
+    opts: ['Como un asesinato probado', 'Como un «suicidio probable» — antes de recibir la autopsia', 'Como un accidente'],
+    a: 1, exp: 'Veintitrés días después del hallazgo, el caso se cerró como «suicidio probable». La autopsia llegó después. La mayoría de los expertos siguen sin considerar cerrada la cuestión.' }
+];
+
+const quizBody = document.getElementById('quizBody');
+const quizProgress = document.getElementById('quizProgress');
+let qIndex = 0, qScore = 0, qAnswered = false;
+const KEYS = ['A', 'B', 'C'];
+
+function renderProgress(){
+  quizProgress.innerHTML = QUIZ.map((_, i) =>
+    '<i class="' + (i < qIndex ? 'done' : i === qIndex ? 'now' : '') + '"></i>'
+  ).join('');
+}
+function renderQuestion(){
+  qAnswered = false;
+  renderProgress();
+  const item = QUIZ[qIndex];
+  quizBody.innerHTML =
+    '<p class="quiz-q">' + (qIndex + 1) + '. ' + item.q + '</p>' +
+    '<div class="quiz-opts">' + item.opts.map((o, i) =>
+      '<button class="quiz-opt" data-i="' + i + '"><span class="opt-key">' + KEYS[i] + '</span><span>' + o + '</span></button>'
+    ).join('') + '</div>' +
+    '<div class="quiz-explain" id="quizExplain">' + item.exp + '</div>' +
+    '<div class="quiz-foot"><span class="quiz-score-pill">Pregunta ' + (qIndex + 1) + ' / ' + QUIZ.length + ' · Correctas: ' + qScore + '</span>' +
+    '<button class="quiz-next" id="quizNext">' + (qIndex === QUIZ.length - 1 ? 'Ver el veredicto' : 'Siguiente pregunta') +
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button></div>';
+
+  quizBody.querySelectorAll('.quiz-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (qAnswered) return;
+      qAnswered = true;
+      const picked = Number(btn.dataset.i);
+      const correct = item.a;
+      quizBody.querySelectorAll('.quiz-opt').forEach(b => {
+        b.disabled = true;
+        const bi = Number(b.dataset.i);
+        if (bi === correct) b.classList.add('correct');
+        else if (bi === picked) b.classList.add('wrong');
+      });
+      if (picked === correct) qScore += 1;
+      document.getElementById('quizExplain').classList.add('show');
+      document.getElementById('quizNext').classList.add('show');
+      renderProgress();
+      const pill = quizBody.querySelector('.quiz-score-pill');
+      pill.textContent = 'Pregunta ' + (qIndex + 1) + ' / ' + QUIZ.length + ' · Correctas: ' + qScore;
+    });
+  });
+
+  document.getElementById('quizNext').addEventListener('click', () => {
+    qIndex += 1;
+    if (qIndex < QUIZ.length) renderQuestion();
+    else renderResult();
+  });
+}
+
+function renderResult(){
+  renderProgress();
+  quizProgress.querySelectorAll('i').forEach(i => { i.classList.remove('now'); i.classList.add('done'); });
+  let rank, text;
+  if (qScore <= 2) {
+    rank = 'Paseante de la estación';
+    text = 'Usted miró — y no recordó nada. En noviembre de 1970 eso era la mayoría: nadie recordó su cara, y por eso precisamente quedó sin nombre.';
+  } else if (qScore <= 4) {
+    rank = 'Perito forense junior';
+    text = 'Usted nota detalles que otros pasaron por alto. Un poco más, y Kripos lo incorporaría a su equipo de casos fríos.';
+  } else {
+    rank = 'Investigador principal';
+    text = 'Usted no habría cerrado este caso en 23 días. Quizá su nombre estaría hoy en la portada de un caso resuelto. O quizá — en una tumba sin nombre.';
+  }
+  quizBody.innerHTML =
+    '<div class="quiz-result">' +
+      '<p class="quiz-score-pill" style="letter-spacing:.3em">PROTOCOLO DE INTERROGATORIO COMPLETADO</p>' +
+      '<div class="result-num">' + qScore + '<small> / ' + QUIZ.length + '</small></div>' +
+      '<h3 class="result-rank">' + rank + '</h3>' +
+      '<p>' + text + '</p>' +
+      '<p style="margin-top:14px;font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fog-dim)">El caso es real. La respuesta — sigue sin existir.</p>' +
+      '<button class="again" id="quizRestart">Repetir el interrogatorio</button>' +
+    '</div>';
+  document.getElementById('quizRestart').addEventListener('click', () => {
+    qIndex = 0; qScore = 0; renderQuestion();
+  });
+}
+renderQuestion();
+</script>
+</body>
+</html>
